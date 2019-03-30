@@ -44,14 +44,6 @@ public class UI extends PApplet
         b = new Button(this, 50, 50, 100, 50, "I am a button");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         w = new Window(this, 512, 250, 1000, 500);
-    
-        for(int i = 0; i <3; i++)
-        {
-            Science p = sciences.get(i);
-            String t = (p.getName());
-            yb = new YellowButtons(this, 20, 450 +(i*(450 + 20)), 450, 100, t);
-
-        }
     }
     void loadText()
     {
@@ -64,12 +56,8 @@ public class UI extends PApplet
     }
     public void draw()
     {
-        background(255);
-        b.render();
+        background(255);    
         w.render();
-        yb.render();
-        mc.update();
-        mc.render();
 
         if (checkKey(LEFT))
         {
