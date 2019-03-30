@@ -2,12 +2,19 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
+import java.util.ArrayList;
+import processing.data.Table;
+import processing.data.TableRow;
+
 public class UI extends PApplet
 {
     Button b;
     MovingCircle mc;
+    Window w;
+    YellowButtons yb; 
+    ArrayList<Science> sciences = new ArrayList<Science>();
 
-    boolean[] keys = new boolean[1024];
+    boolean[] keys = new boolean[1024]; 
 
     public void keyPressed()
     {
@@ -27,22 +34,40 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(800, 800);
+        size(1024, 700);
         // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen(); 
+        //fullScreen();
+        loadText();    
     }
-
     public void setup()
     {
         b = new Button(this, 50, 50, 100, 50, "I am a button");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
-    }
+        w = new Window(this, 512, 250, 1000, 500);
+    
+        for(int i = 0; i <3; i++)
+        {
+            Science p = sciences.get(i);
+            String t = (p.getName());
+            yb = new YellowButtons(this, 20, 450 +(i*(450 + 20)), 450, 100, t);
 
+        }
+    }
+    void loadText()
+    {
+        Table table = loadTable("Science.csv", "header");
+        for(TableRow tr:table.rows())
+        {
+            Science p = new Science(tr);
+            sciences.add(p);
+        }        
+    }
     public void draw()
     {
-        background(0);
+        background(255);
         b.render();
-
+        w.render();
+        yb.render();
         mc.update();
         mc.render();
 
