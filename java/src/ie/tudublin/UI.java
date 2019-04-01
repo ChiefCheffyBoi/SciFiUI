@@ -81,6 +81,9 @@ public class UI extends PApplet
         b = new Button(this, 50, 50, 100, 50, "I am a button");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         w = new Window(this, 512, 250, 1000, 500);
+        //paramaters for earth and moon
+    
+        e = new Earth(this, 600, 250, 400, 400, rand(1-6), rand(280-330), rand(225-270), rand(1-10), rand(1-10));
     }
     public void makeDecision( String speech){
         String[] array = speech.split(" ");
@@ -108,7 +111,7 @@ public class UI extends PApplet
     }
     public void draw()
     {
-        red =1; 
+        red =1;     
         background(255);    
         w.render();
         stars.render();
