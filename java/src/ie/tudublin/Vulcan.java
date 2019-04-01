@@ -26,7 +26,4 @@ public class Vulcan
         ui.ellipse(x, y, radius, diameter);
         ui.fill(253,94,83);
     }
-
-
-
 }

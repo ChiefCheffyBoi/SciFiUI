@@ -26,6 +26,7 @@ public class UI extends PApplet
     ArrayList<Science> sciences = new ArrayList<Science>();
     Earth e;
     Vulcan v; 
+    Kronos k; 
 
     int earth  = 0;
     int def    = 0;
@@ -84,10 +85,12 @@ public class UI extends PApplet
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         w = new Window(this, 512, 250, 1000, 500);
         //paramaters for earth and moon
-        e = new Earth(this, 600, 250, 400, 400, random(1 - 6), random(280 - 330), random(225 - 270), random(1 - 10),
-                random(1 - 10));
+        e = new Earth(this, 600, 250, 400, 400, random(1 , 6), random(280 , 330), random(225 , 270), random(1 , 10),
+                random(1 , 10));
         //vulcan
         v = new Vulcan(this, 500, 250, 800, 800);
+        //kronos
+        k = new Kronos(this, 600, 250, 600, 600);
         
     }
     public void makeDecision( String speech){
