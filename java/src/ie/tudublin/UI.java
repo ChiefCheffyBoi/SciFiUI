@@ -87,7 +87,7 @@ public class UI extends PApplet
         e = new Earth(this, 600, 250, 400, 400, random(1 - 6), random(280 - 330), random(225 - 270), random(1 - 10),
                 random(1 - 10));
         //vulcan
-        v = new Vulcan(this, );
+        v = new Vulcan(this, 500, 250, 800, 800);
         
     }
     public void makeDecision( String speech){

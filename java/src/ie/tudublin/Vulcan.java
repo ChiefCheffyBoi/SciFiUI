@@ -22,7 +22,9 @@ public class Vulcan
 
     public void render()
     {       
-        //vulcan
+        //vulcan is an orange planet very similiar to mars, 2*radius of earth
+        ui.ellipse(x, y, radius, diameter);
+        ui.fill(253,94,83);
     }
 
 
