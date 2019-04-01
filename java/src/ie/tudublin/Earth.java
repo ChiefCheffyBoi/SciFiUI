@@ -32,14 +32,16 @@ public class Earth
     public void render()
     {
         ui.stroke(255,240,210);
+        
         //earth
         ui.ellipse(x, y, radius, diameter);
         ui.fill(0,0,255);
         //contenents post C02 disaster
         ui.ellipse(x, y-100, 60, 90);
         ui.fill(0,255,0);
+        ui.ellipse(x-100, y+80, 20, 40);
+        ui.fill(0,255, 0);
         
-
         //moon
         ui.ellipse(x/4, y, radius/4, radius/4);
         ui.fill(60,60,60);
