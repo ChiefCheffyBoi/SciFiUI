@@ -5,6 +5,7 @@ import processing.core.PApplet;
 import java.util.ArrayList;
 import processing.data.Table;
 import processing.data.TableRow;
+
 //for voice recognition
 import java.io.IOException;
 import java.util.logging.Level;
@@ -27,6 +28,7 @@ public class UI extends PApplet
     Earth e;
     Vulcan v; 
     Kronos k; 
+    Mline ml;
 
     int earth  = 0;
     int def    = 0;
@@ -40,11 +42,7 @@ public class UI extends PApplet
     boolean[] keys = new boolean[1024]; 
     // Logger
 	private Logger logger = Logger.getLogger(getClass().getName());
-
-	// Variables
-	private String result;
-
-	// Threads
+    // Threads
 	Thread	speechThread;
 	Thread	resourcesThread;
 
@@ -139,7 +137,9 @@ public class UI extends PApplet
         if(black == 1){
             background(80,80,80);
         }
-
+        if(def == 1){
+            ml.render();
+        }
 
         if (checkKey(LEFT))
         {

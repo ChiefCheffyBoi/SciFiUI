@@ -33,7 +33,5 @@ public class Kronos
         {
             ui.ellipse(ui.random(x-200, x-600), ui.random(400 , 600), ui.random(1 , 100), ui.random(1 , 100));
         }
-
-
     }
 }
