@@ -78,7 +78,7 @@ public class UI extends PApplet
     public void draw()
     {
              
-        background(255);    
+        background(211,211,211);    
         w.render();
         earth =1;
         //kronos=1;

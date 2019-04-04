@@ -30,21 +30,25 @@ public class Window extends PApplet
     public void render()
     {
         ui.stroke(0,0,0);
+
+        ui.fill(255,255,255);
+        ui.ellipse(x, y, radius+20, diameter+20);
+
         ui.fill(0,0,0);
         ui.ellipse(x, y, radius, diameter);
 
-        ui.noFill();
-        ui.ellipse(x, y, radius+20, diameter+20);
+        
 
-        ui.image(screw,250,500,20,20); 
-        ui.image(screw,250,10,20,20); 
-        ui.image(screw,774,500,20,20);
-        ui.image(screw,774, 10, 20,20); 
-        ui.image(screw,950,400,20,20);
-        ui.image(screw,950, 100, 20,20); 
-        ui.image(screw,60,400,20,20);
-        ui.image(screw,60, 100, 20,20); 
-        ui.image(screw, x, 525, 20,20); 
+        ui.fill(0,0,0);
+        ui.ellipse(250,500,10,10); 
+        ui.ellipse(250,10,10,10); 
+        ui.ellipse(774,500,10,10);
+        ui.ellipse(774, 10, 10,10); 
+        ui.ellipse(950,405,10,10);
+        ui.ellipse(950, 100, 10,10); 
+        ui.ellipse(60,400,10,10);
+        ui.ellipse(60, 100, 10,10); 
+        ui.ellipse( x, 530, 10,10); 
     }
 
 
