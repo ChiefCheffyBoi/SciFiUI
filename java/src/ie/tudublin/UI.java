@@ -18,6 +18,7 @@ public class UI extends PApplet
     Vulcan v; 
     Kronos k; 
     Mline ml;
+    Edetails ed;
 
     int earth  = 0;
     int def    = 0;
@@ -40,6 +41,7 @@ public class UI extends PApplet
         w = new Window(this, 512, 250, 1000, 500);
         //paramaters for earth and moon
         e = new Earth(this, 600, 250, 400, 400);
+        ed = new Edetails(this, 800,480, 200, 200);
         //vulcan
         v = new Vulcan(this, 500, 250, 800, 800);
         //kronos
@@ -80,6 +82,7 @@ public class UI extends PApplet
 
         if(earth == 1){
             e.render();
+            ed.render();
         }
         if(vulcan == 1){
             v.render();

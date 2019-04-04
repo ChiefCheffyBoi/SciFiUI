@@ -25,8 +25,8 @@ public class Window extends PApplet
     public void render()
     {
         ui.stroke(255,240,210);
-        ui.ellipse(x, y, radius, diameter);
         ui.fill(0,0,0);
+        ui.ellipse(x, y, radius, diameter);
     }
 
 
