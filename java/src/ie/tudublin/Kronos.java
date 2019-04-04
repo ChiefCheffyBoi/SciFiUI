@@ -23,11 +23,13 @@ public class Kronos
     public void render()
     {       
         //kronos
-        ui.ellipse(x, y, radius, diameter);
         ui.fill(64,224,208);
+        ui.ellipse(x, y, radius, diameter);
+        
         //praxis (kronos' moon)
-        ui.ellipse(x-800, y, radius/5, diameter/5);
         ui.fill(60,60,60);
+        ui.ellipse(x-200, y, radius/5, diameter/5);
+       
         // moon was destroyed, making destroyed pieces
         for(int i = 0; i < ui.random(1-20); i++)
         {

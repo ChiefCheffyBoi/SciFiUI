@@ -1,6 +1,7 @@
 package ie.tudublin;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 import java.util.ArrayList;
 import processing.data.Table;
@@ -19,6 +20,7 @@ public class UI extends PApplet
     Kronos k; 
     Mline ml;
     Edetails ed;
+    PImage screw;
 
     int earth  = 0;
     int def    = 0;
@@ -36,9 +38,9 @@ public class UI extends PApplet
     }
     public void setup()
     {
-        b = new Button(this, 50, 50, 100, 50, "I am a button");
+        b = new Button(this, 50, 50, 100, 50, "I am a button"); 
         mc = new MovingCircle(this, width / 2, height / 2, 50);
-        w = new Window(this, 512, 250, 1000, 500);
+     
         //paramaters for earth and moon
         e = new Earth(this, 600, 250, 400, 400);
         ed = new Edetails(this, 800,480, 200, 200);
@@ -46,6 +48,9 @@ public class UI extends PApplet
         v = new Vulcan(this, 500, 250, 800, 800);
         //kronos
         k = new Kronos(this, 600, 250, 600, 600);
+
+        screw = loadImage("screw.jpg");
+        w = new Window(this, 512, 260, 1000, 500, screw);
         
     }
     public void makeDecision( String speech){
@@ -57,9 +62,7 @@ public class UI extends PApplet
 			vulcan = 1;
 		} else if ("Kronos".equals(array[2])) {
 			kronos = 1;
-		} else if ("vulcan".equals(array[2])) {
-			vulcan = 1;
-        }else if ("red".equals(array[0])){
+		} else if ("red".equals(array[0])){
             red = 1; 
         }else if ("black".equals(array[0])){
             black = 1; 
@@ -78,6 +81,8 @@ public class UI extends PApplet
         background(255);    
         w.render();
         earth =1;
+        //kronos=1;
+        //vulcan=1; 
     
 
         if(earth == 1){
@@ -99,6 +104,8 @@ public class UI extends PApplet
         if(def == 1){
             ml.render();
         }
+
+
     }
 }
 
