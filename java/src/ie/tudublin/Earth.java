@@ -8,49 +8,54 @@ public class Earth
     private float y;
     private float diameter;
     private float radius;
-    private float x1;
-    private float y1;
-    private float d1;
-    private float r1; 
-    private float numC;
 
 
-    public Earth(UI ui, float x, float y, float radius, float diameter, float numC, float x1, float y1, float r1, float d1)
+
+    public Earth(UI ui, float x, float y, float radius, float diameter)
     {
         this.ui = ui;
         this.x = x;
         this.y = y;
         this.diameter = diameter;
         this.radius = radius; 
-        this.x1 = x1;
-        this.y1 = y1;
-        this.d1 = d1;
-        this.r1 = r1; 
-        this.numC = numC;
     }
 
     public void render()
     {
-        ui.stroke(255,240,210);
         
+        ui.stroke(0);
+
         //earth
-        ui.ellipse(x, y, radius, diameter);
         ui.fill(0,0,255);
+        ui.ellipse(x, y, radius, diameter);
         //contenents post C02 disaster
-        ui.ellipse(x, y-100, 60, 90);
         ui.fill(0,255,0);
-        ui.ellipse(x-100, y+80, 20, 40);
-        ui.fill(0,255, 0);
+        ui.ellipse(x, y-80, 200,60);
+        ui.ellipse(x-80, y-120, 18,30);
+        ui.ellipse(x-100, y-120, 10,10);
+        ui.ellipse(x, y+60, 140 ,200);
+        ui.ellipse(x-160, y, 80 ,220);
+        ui.ellipse(x+120, y-60, 120 ,170);
+
+        //poles
+        ui.fill(255,255,255);
+        ui.ellipse(x, y-190,100,20);
+        ui.ellipse(x, y+190,120,20);
+
         
         //moon
-        ui.ellipse(x/4, y, radius/4, radius/4);
-        ui.fill(60,60,60);
-        //details on moon
-        for(int i=0; i< numC; i++)
-        {
-            ui.fill(80,80,80);
-            ui.ellipse(x1, y1, r1, d1);
-        }
+        ui.fill(80,80,80);
+        ui.ellipse(x-400, y, radius/4, radius/4);
+        //moon details
+        ui.fill(90,90,90);
+        ui.ellipse(x-390, y+20, radius/16, radius/16);
+        ui.ellipse(x-420, y-30, radius/20, radius/20);
+        ui.ellipse(x-370, y-10, radius/24, radius/24);
+
+        ui.fill(0,0,0);
+        
+       
+        
         
     }
 

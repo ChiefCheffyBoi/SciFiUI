@@ -22,8 +22,8 @@ public class Stars
 
     public void render()
     {       
-        //fake box in which random stars are made, towards the sides are placed stars to fit the window 
-        ui.ellipse(random(), y, radius, diameter);
+        //fake box in which random stars are made, towards the sides are placed stars to fit the window
+        ui.ellipse(ui.random(1,9), y, radius, diameter);
         ui.fill(253,94,83);
     }
 }

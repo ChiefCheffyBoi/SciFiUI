@@ -6,17 +6,6 @@ import java.util.ArrayList;
 import processing.data.Table;
 import processing.data.TableRow;
 
-//for voice recognition
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Port;
-
-import edu.cmu.sphinx.api.Configuration;
-import edu.cmu.sphinx.api.LiveSpeechRecognizer;
-import edu.cmu.sphinx.api.SpeechResult;
 
 public class UI extends PApplet
 {
@@ -38,44 +27,11 @@ public class UI extends PApplet
     int red    = 0;
     int black  = 0;
 
-
-    boolean[] keys = new boolean[1024]; 
-    // Logger
-	private Logger logger = Logger.getLogger(getClass().getName());
-    // Threads
-	Thread	speechThread;
-	Thread	resourcesThread;
-
-	// LiveRecognizer
-	private LiveSpeechRecognizer recognizer;
-    
-    public void keyPressed()
-    {
-        keys[keyCode] = true;
-    }
-    
-    public void keyReleased()
-    {
-        keys[keyCode] = true;
-    }
-
-    public boolean checkKey(int c)
-    {
-        return keys[c] || keys [Character.toUpperCase(c)];
-    }
-    
-
     public void settings()
     {
         size(1024, 700);
         // Use fullscreen instead of size to make your interface fullscreen
         //fullScreen();  
-        Configuration configuration = new Configuration();
-        configuration.setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
-        configuration.setDictionaryPath("resource:/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict");
-        configuration.setGrammarPath("resource:/grammars");
-		configuration.setGrammarName("grammar");
-		configuration.setUseGrammar(true);
     }
     public void setup()
     {
@@ -83,8 +39,7 @@ public class UI extends PApplet
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         w = new Window(this, 512, 250, 1000, 500);
         //paramaters for earth and moon
-        e = new Earth(this, 600, 250, 400, 400, random(1 , 6), random(280 , 330), random(225 , 270), random(1 , 10),
-                random(1 , 10));
+        e = new Earth(this, 600, 250, 400, 400);
         //vulcan
         v = new Vulcan(this, 500, 250, 800, 800);
         //kronos
@@ -117,10 +72,11 @@ public class UI extends PApplet
     }
     public void draw()
     {
-        red =1;     
+             
         background(255);    
         w.render();
-        stars.render();
+        earth =1;
+    
 
         if(earth == 1){
             e.render();
@@ -139,11 +95,6 @@ public class UI extends PApplet
         }
         if(def == 1){
             ml.render();
-        }
-
-        if (checkKey(LEFT))
-        {
-            System.out.println("Left arrow key pressed");
         }
     }
 }
