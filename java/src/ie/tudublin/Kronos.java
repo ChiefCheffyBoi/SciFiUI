@@ -28,12 +28,20 @@ public class Kronos
         
         //praxis (kronos' moon)
         ui.fill(60,60,60);
-        ui.ellipse(x-200, y, radius/5, diameter/5);
+        ui.ellipse(x-450, y, radius/4, diameter/4);
        
         // moon was destroyed, making destroyed pieces
-        for(int i = 0; i < ui.random(1-20); i++)
-        {
-            ui.ellipse(ui.random(x-200, x-600), ui.random(400 , 600), ui.random(1 , 100), ui.random(1 , 100));
-        }
+        ui.fill(0,0,0);
+        ui.ellipse(x-420,y-10,100,100);
+
+        ui.fill(60,60,60);
+        ui.ellipse(x-420,y,10,10);//
+        ui.ellipse(x-400,y-20,40,40);//
+        ui.ellipse(x-350,y-100,50,50);//
+        ui.ellipse(x-420,y,10,10);
+        ui.ellipse(x-420,y,10,10);
+        ui.ellipse(x-420,y,10,10);
+
+
     }
 }

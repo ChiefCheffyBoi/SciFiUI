@@ -47,7 +47,7 @@ public class UI extends PApplet
         //vulcan
         v = new Vulcan(this, 500, 250, 800, 800);
         //kronos
-        k = new Kronos(this, 600, 250, 600, 600);
+        k = new Kronos(this, 590, 260, 480, 480);
 
         screw = loadImage("screw.jpg");
         w = new Window(this, 512, 260, 1000, 500, screw);
@@ -80,8 +80,8 @@ public class UI extends PApplet
              
         background(211,211,211);    
         w.render();
-        earth =1;
-        //kronos=1;
+        //earth =1;
+        kronos=1;
         //vulcan=1; 
     
 
