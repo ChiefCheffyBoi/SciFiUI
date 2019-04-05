@@ -3,15 +3,10 @@ package ie.tudublin;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-import java.util.ArrayList;
-
 public class UI extends PApplet
 {
-    Button b;
     MovingCircle mc;
     Window w;
-    YellowButtons yb; 
-    ArrayList<Science> sciences = new ArrayList<Science>();
     Earth e;
     Vulcan v; 
     Kronos k; 
@@ -36,7 +31,6 @@ public class UI extends PApplet
     }
     public void setup()
     {
-        b = new Button(this, 50, 50, 100, 50, "I am a button"); 
         mc = new MovingCircle(this, width / 2, height / 2, 50);
      
         //paramaters for earth and moon
