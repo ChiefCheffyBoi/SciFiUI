@@ -36,11 +36,16 @@ public class Kronos
 
         ui.fill(60,60,60);
         ui.ellipse(x-420,y,10,10);//
-        ui.ellipse(x-400,y-20,40,40);//
-        ui.ellipse(x-350,y-100,50,50);//
-        ui.ellipse(x-420,y,10,10);
-        ui.ellipse(x-420,y,10,10);
-        ui.ellipse(x-420,y,10,10);
+        ui.ellipse(x-400,y-20,30,30);//
+        ui.ellipse(x-350,y-100,20,20);//
+        ui.ellipse(x-360,y+20,10,10);//
+        ui.ellipse(x-350,y-20,10,10);//
+        ui.ellipse(x-410,y-50,10,10);//
+        ui.ellipse(x-320,y,10,10);//
+        ui.ellipse(x-320,y-80,10,10);//
+        ui.ellipse(x-370,y-10,10,10);//
+        
+
 
 
     }

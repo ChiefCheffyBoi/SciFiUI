@@ -4,9 +4,6 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 import java.util.ArrayList;
-import processing.data.Table;
-import processing.data.TableRow;
-
 
 public class UI extends PApplet
 {
@@ -21,6 +18,7 @@ public class UI extends PApplet
     Mline ml;
     Edetails ed;
     PImage screw;
+    Stars s;
 
     int earth  = 0;
     int def    = 0;
@@ -48,7 +46,7 @@ public class UI extends PApplet
         v = new Vulcan(this, 500, 250, 800, 800);
         //kronos
         k = new Kronos(this, 590, 260, 480, 480);
-
+        s = new Stars(this, 10);
         screw = loadImage("screw.jpg");
         w = new Window(this, 512, 260, 1000, 500, screw);
         
@@ -80,8 +78,9 @@ public class UI extends PApplet
              
         background(211,211,211);    
         w.render();
-        //earth =1;
-        kronos=1;
+        s.render();
+        earth =1;
+        //kronos=1;
         //vulcan=1; 
     
 
