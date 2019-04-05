@@ -3,6 +3,8 @@ package ie.tudublin;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+
+
 public class UI extends PApplet
 {
     MovingCircle mc;
@@ -13,7 +15,7 @@ public class UI extends PApplet
     Mline ml;
     Edetails ed;
     PImage screw;
-    Stars s;
+    Stars s; 
 
     int earth  = 0;
     int def    = 0;
@@ -72,7 +74,7 @@ public class UI extends PApplet
         w.render();
         s.render();
         //earth =1;
-        kronos=1;
+        //kronos=1;
         //vulcan=1; 
     
 
@@ -98,5 +100,29 @@ public class UI extends PApplet
 
 
     }
+    /*import java.io.*;
+        import sun.audio.*;
+
+        
+        * A simple Java sound file example (i.e., Java code to play a sound file).
+        * AudioStream and AudioPlayer code comes from a javaworld.com example.
+        * @author alvin alexander, devdaily.com.
+        
+        public class JavaAudioPlaySoundExample
+        {
+         public static void main(String[] args) 
+            throws Exception
+            {
+         // open the sound file as a Java input stream
+         String gongFile = "/Users/al/DevDaily/Projects/MeditationApp/resources/gong.au";
+        InputStream in = new FileInputStream(gongFile);
+
+        // create an audiostream from the inputstream
+        AudioStream audioStream = new AudioStream(in);
+
+         // play the audio clip with the audioplayer class
+         AudioPlayer.player.start(audioStream);
+         }
+    */
 }
 
