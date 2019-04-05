@@ -76,7 +76,7 @@ public class UI extends PApplet
     public void draw()
     {
              
-        background(211,211,211);    
+        background(160,160,160);    
         w.render();
         s.render();
         earth =1;

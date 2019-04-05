@@ -18,13 +18,11 @@ public class Stars
     {       
         //fake box in which random stars are made, towards the sides are placed stars to fit the window
         //Note to self: trying to fill a oval with square blocks is not fun...
-        //see outling.jpg for understanding of how this works
+        //see outline.jpg for understanding of how this works
         for(int i = 0; i<50; i++)
         {
             ui.fill(255,255,255);
-            //lhs
             ui.ellipse(ui.random(250,750), ui.random(50,460), radius, radius);
-            //rhs
             ui.ellipse(ui.random(250,750), ui.random(50,460), radius, radius);
         }
         for(int i=0; i<10; i++){
@@ -58,8 +56,16 @@ public class Stars
             //rhs
             ui.ellipse(ui.random(850,910), ui.random(360,405), radius, radius);
             ui.ellipse(ui.random(850,910), ui.random(120,170), radius, radius);
-
         }
+        for(int i =0; i<4; i++){
+            ui.fill(255,255,255);
+            //top
+            ui.ellipse(ui.random(350,650), ui.random(25,50), radius, radius);
+            //bottom
+            ui.ellipse(ui.random(350,650), ui.random(460,485), radius, radius);
+        }
+
+
         
         
         
