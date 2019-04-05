@@ -28,7 +28,7 @@ public class Stars
         for(int i=0; i<10; i++){
             ui.fill(255,255,255);
             //lhs
-            ui.ellipse(ui.random(150,250), ui.random(100,410), radius, radius);
+            ui.ellipse(ui.random(140,250), ui.random(100,410), radius, radius);
             //rhs
             ui.ellipse(ui.random(750,850), ui.random(100,410), radius, radius); 
         }
@@ -64,10 +64,5 @@ public class Stars
             //bottom
             ui.ellipse(ui.random(350,650), ui.random(460,485), radius, radius);
         }
-
-
-        
-        
-        
     }
 }
