@@ -25,9 +25,7 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(1024, 700);
-        // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen();  
+        size(1024, 700);  
     }
     public void setup()
     {
@@ -73,8 +71,8 @@ public class UI extends PApplet
         background(160,160,160);    
         w.render();
         s.render();
-        earth =1;
-        //kronos=1;
+        //earth =1;
+        kronos=1;
         //vulcan=1; 
     
 

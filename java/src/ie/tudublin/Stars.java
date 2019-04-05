@@ -19,6 +19,7 @@ public class Stars
         //fake box in which random stars are made, towards the sides are placed stars to fit the window
         //Note to self: trying to fill a oval with square blocks is not fun...
         //see outline.jpg for understanding of how this works
+        //for clouds 126, 48,31 
         for(int i = 0; i<50; i++)
         {
             ui.fill(255,255,255);
