@@ -67,25 +67,33 @@ public class UI extends PApplet
             black = 0;
         }
     }
+    public void bg(){
+            background(160,160,160);
+            w.render();
+            s.render();
+
+
+    }
     public void draw()
     {
              
-        background(160,160,160);    
-        w.render();
-        s.render();
+        bg();
         //earth =1;
         //kronos=1;
         //vulcan=1; 
     
 
         if(earth == 1){
+            bg();
             e.render();
             ed.render();
         }
         if(vulcan == 1){
+            bg();
             v.render();
         }
         if(kronos == 1){
+            bg();
             k.render();
         }
         if(red == 1){
