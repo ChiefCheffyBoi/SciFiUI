@@ -2,6 +2,9 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 import processing.core.PImage;
+import ddf.minim.*;
+
+
 
 
 
@@ -16,6 +19,15 @@ public class UI extends PApplet
     Edetails ed;
     PImage screw;
     Stars s; 
+    Minim minim;
+    AudioPlayer player;
+
+    AudioSample lobby;
+    //adding a bit of jazz
+    AudioSample JAZZ;
+
+    AudioSample vmusic;
+    AudioSample kmusic;
 
     int earth  = 0;
     int def    = 0;
@@ -31,6 +43,13 @@ public class UI extends PApplet
     }
     public void setup()
     {
+        minim = new Minim(this);
+ 
+        player  = minim.loadFile("lobby.mp3");
+        //JAZZ = minim.loadSample("jingle.mp3", 2048);
+        //vmusic = minim.loadSample("jingle.mp3", 2048);
+        //kmusic = minim.loadSample("jingle.mp3", 2048);
+
         mc = new MovingCircle(this, width / 2, height / 2, 50);
      
         //paramaters for earth and moon
@@ -78,6 +97,7 @@ public class UI extends PApplet
     {
              
         bg();
+        player.play();
         //earth =1;
         //kronos=1;
         //vulcan=1; 
@@ -87,6 +107,11 @@ public class UI extends PApplet
             bg();
             e.render();
             ed.render();
+            lobby.close();
+            minim.stop();
+ 
+            super.stop();
+
         }
         if(vulcan == 1){
             bg();
