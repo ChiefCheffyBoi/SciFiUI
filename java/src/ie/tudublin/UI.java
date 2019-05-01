@@ -78,16 +78,10 @@ public class UI extends PApplet {
         s = new Stars(this, 10);
         screw = loadImage("screw.jpg");
         w = new Window(this, 512, 260, 1000, 500, screw);
-        r = new Radar(this, 850, 600, 150);
+        r = new Radar(this, 650, 600, 150);
         re = new Red(this, 512, 260);
 
-        for(int i = 0 ; i < sciences.size() ; i ++)
-        {
-            Science sci = sciences.get(i);
-            bResult = new Buttons(this, 450, 20, i);
-        }
-         
-        loadProducts();
+      
        
     }
     public void mouseClicked()
@@ -108,7 +102,7 @@ public class UI extends PApplet {
             }
         }
 
-        
+
         if (mouseX > 20 && mouseX < 170)
         {
             if (mouseY < 520 && mouseY > 550)
@@ -170,6 +164,7 @@ public class UI extends PApplet {
 
         bg();
         
+        earth =1;
         player.play();
 
         if(earth == 1){
@@ -212,6 +207,8 @@ public class UI extends PApplet {
             player.pause();
 
         }
+        r.render();
+        r.update();
     }
 
 }
