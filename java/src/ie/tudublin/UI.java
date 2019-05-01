@@ -2,160 +2,217 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 import processing.core.PImage;
+import processing.data.Table;
+import processing.data.TableRow;
+import java.util.ArrayList;
+
 import ddf.minim.*;
 
+public class UI extends PApplet {
 
-
-
-
-public class UI extends PApplet
-{
+    ArrayList<Science> sciences = new ArrayList<Science>();
     MovingCircle mc;
     Window w;
     Earth e;
-    Vulcan v; 
-    Kronos k; 
+    Vulcan v;
+    Kronos k;
     Mline ml;
     Edetails ed;
     PImage screw;
-    Stars s; 
+    Stars s;
     Minim minim;
+    Radar r;
+    Red re;
+    Buttons bResult; 
     AudioPlayer player;
+    AudioPlayer player2;
+    AudioPlayer player3;
+    AudioPlayer player4;
+    AudioPlayer player5;
+    AudioPlayer player6;
 
-    AudioSample lobby;
-    //adding a bit of jazz
-    AudioSample JAZZ;
-
-    AudioSample vmusic;
-    AudioSample kmusic;
-
-    int earth  = 0;
-    int def    = 0;
+    int earth = 0;
+    int def = 0;
     int vulcan = 0;
     int kronos = 0;
-    int safe   = 0; 
-    int red    = 0;
-    int black  = 0;
-
-    public void settings()
+    int safe = 0;
+    int red = 0;
+    int black = 0;
+    int result; 
+    
+    void loadProducts()
     {
-        size(1024, 700);  
+        Table table = loadTable("Science.csv", "header");
+        for(TableRow tr:table.rows())
+        {
+            Science sci = new Science(tr);
+            sciences.add(sci);
+        }        
     }
-    public void setup()
-    {
+
+
+    public void settings() {
+        size(1024, 700);
+    }
+
+    public void setup() {
         minim = new Minim(this);
- 
-        player  = minim.loadFile("lobby.mp3");
-        //JAZZ = minim.loadSample("jingle.mp3", 2048);
-        //vmusic = minim.loadSample("jingle.mp3", 2048);
-        //kmusic = minim.loadSample("jingle.mp3", 2048);
+
+        player = minim.loadFile("lobby.mp3");
+        player2 = minim.loadFile("red.mp3");
+        player3 = minim.loadFile("earth.mp3");
+        player4 = minim.loadFile("black.mp3");
+        player5 = minim.loadFile("vulcan.mp3");
+        player6 = minim.loadFile("bkronos.mp3");
+        
 
         mc = new MovingCircle(this, width / 2, height / 2, 50);
-     
-        //paramaters for earth and moon
+
+        // paramaters for earth and moon
         e = new Earth(this, 600, 250, 400, 400);
-        ed = new Edetails(this, 800,480, 200, 200);
-        //vulcan
-        v = new Vulcan(this, 500, 250, 800, 800);
-        //kronos
+        ed = new Edetails(this, 800, 480, 200, 200);
+        // vulcan
+        v = new Vulcan(this, 500, 260, 460, 460);
+        // kronos
         k = new Kronos(this, 590, 260, 480, 480);
         s = new Stars(this, 10);
         screw = loadImage("screw.jpg");
         w = new Window(this, 512, 260, 1000, 500, screw);
-        
-    }
-    public void makeDecision( String speech){
-        String[] array = speech.split(" ");
-		// Find the key word to increment variable for thread below to understand which action to take. 
-		if ("earth".equals(array[2])) {
-			earth = 1; 
-		} else if ("vulcan".equals(array[2])) {
-			vulcan = 1;
-		} else if ("Kronos".equals(array[2])) {
-			kronos = 1;
-		} else if ("red".equals(array[0])){
-            red = 1; 
-        }else if ("black".equals(array[0])){
-            black = 1; 
-        }else if ("shields".equals(array[0]) && "up".equals(array[1])){
-            def = 1;
-        }else if ("lower".equals(array[0]) && "shields".equals(array[1])){
-            red = 1; 
-        }else if ("cancel".equals(array[0])){
-            red   = 0;
-            black = 0;
+        r = new Radar(this, 850, 600, 150);
+        re = new Red(this, 512, 260);
+
+        for(int i = 0 ; i < sciences.size() ; i ++)
+        {
+            Science sci = sciences.get(i);
+            bResult = new Buttons(this, 450, 20, i);
         }
+         
+        loadProducts();
+       
+    }
+    public void mouseClicked()
+    {
+        // My way lol
+        if (mouseX > 20 && mouseX < 170)
+        {
+            if (mouseY < 520 && mouseY > 550)
+            {
+                red = 1; 
+            }
+        }
+        if (mouseX > 20 && mouseX < 170)
+        {
+            if (mouseY < 550 && mouseY > 570)
+            {
+                black = 1; 
+            }
+        }
+
+        
+        if (mouseX > 20 && mouseX < 170)
+        {
+            if (mouseY < 520 && mouseY > 550)
+            {
+                red = 1; 
+            }
+        }
+        if (mouseX > 20 && mouseX < 170)
+        {
+            if (mouseY < 520 && mouseY > 550)
+            {
+                red = 1; 
+            }
+        }
+        if (mouseX > 20 && mouseX < 170)
+        {
+            if (mouseY < 520 && mouseY > 550)
+            {
+                red = 1; 
+            }
+        }
+        if (mouseX > 20 && mouseX < 170)
+        {
+            if (mouseY < 520 && mouseY > 550)
+            {
+                red = 1; 
+            }
+        }
+   
+    
     }
     public void bg(){
-            background(160,160,160);
+            mouseClicked();
             w.render();
             s.render();
+            buttons();
+    }
+    public void buttons(){
+        mouseClicked();
+
+        fill(255, 0,0);
+        rect(20,520, 150,20);
+        fill(0,0,0);
+        text("Red Alert", 20+55, 520+15); 
+
+        fill(255, 0,0);
+        rect(20,550, 150,20);
+        fill(0,0,0);
+        text("Black Alert", 20+55, 550+15); 
+
 
 
     }
+  
     public void draw()
     {
-             
+        background(160,160,160);
+        mouseClicked();
+
         bg();
+        
         player.play();
-        //earth =1;
-        //kronos=1;
-        //vulcan=1; 
-    
 
         if(earth == 1){
             bg();
             e.render();
             ed.render();
-            lobby.close();
-            minim.stop();
- 
-            super.stop();
-
+            player.pause();
+            player6.pause();
+            player5.pause();
+            player3.play();
+            
         }
         if(vulcan == 1){
             bg();
             v.render();
+            player.pause();
+            player3.pause();
+            player5.play();
+            player6.pause();
         }
         if(kronos == 1){
             bg();
             k.render();
+            player6.play();
+            player.pause();
+            player3.pause();
+            player5.pause();
+           
         }
         if(red == 1){
-            background(255,0,0);
+            re.render();
+            re.update();
+            player.pause();
+            player2.play();
         }
         if(black == 1){
             background(80,80,80);
-        }
-        if(def == 1){
-            ml.render();
-        }
+            bg();
+            player4.play();
+            player.pause();
 
-
+        }
     }
-    /*import java.io.*;
-        import sun.audio.*;
 
-        
-        * A simple Java sound file example (i.e., Java code to play a sound file).
-        * AudioStream and AudioPlayer code comes from a javaworld.com example.
-        * @author alvin alexander, devdaily.com.
-        
-        public class JavaAudioPlaySoundExample
-        {
-         public static void main(String[] args) 
-            throws Exception
-            {
-         // open the sound file as a Java input stream
-         String gongFile = "/Users/al/DevDaily/Projects/MeditationApp/resources/gong.au";
-        InputStream in = new FileInputStream(gongFile);
-
-        // create an audiostream from the inputstream
-        AudioStream audioStream = new AudioStream(in);
-
-         // play the audio clip with the audioplayer class
-         AudioPlayer.player.start(audioStream);
-         }
-    */
 }
 

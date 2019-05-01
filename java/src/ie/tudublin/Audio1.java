@@ -46,10 +46,6 @@ public class Audio1 extends PApplet
             stroke(map(i, 0, ai.bufferSize(), 0, 255), 255, 255);            
             line(i, 0, i, fft.getBand(i) * 20);
         }
-
-
-
-
     }
 
 }
