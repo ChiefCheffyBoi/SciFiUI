@@ -1,18 +1,29 @@
 # SciFi UI Project
 
-Name:
+Name: Ryan Campbell
 
-Student Number: 
+Student Number: C17407044
 
 Fork this repository and use it a starter project for your assignment
 
 # Description of the assignment
+This assignment is a baisc space shuttle. When a button is clicked it either follows a certain commant eg. red alert
+or it brings the user to the selected planet. Music releating to each planet will be played and some relevant information
+about the planet will be displayed. 
 
 # Instructions
+It is very simple to use. Simply click a button and the action is carried out. 
 
 # How it works
+Each critical element to the UI has a different class.For example, each planet, the common background and the stars 
+are all seperate classes.  
 
 # What I am most proud of in the assignment
+I am proud about the etire project. The late submission may suggest otherwise but I put a lot of time and thought into 
+what I'd do and how I'd do it. There was a lot of trial and error. My favourite part is the aesthetic of the UI. I believe it's 
+pretty in a plain but effective design.
+
+
 
 # Markdown Tutorial
 

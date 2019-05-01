@@ -183,8 +183,10 @@ public class UI extends PApplet {
     {
         background(160,160,160);
         mouseClicked();
-
+        earth = 1; 
+        red = 1; 
         bg();
+        
         
         player.play();
 
