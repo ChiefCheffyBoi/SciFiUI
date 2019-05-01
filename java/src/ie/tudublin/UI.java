@@ -153,6 +153,23 @@ public class UI extends PApplet {
         fill(0,0,0);
         text("Black Alert", 20+55, 550+15); 
 
+        fill(255, 0,0);
+        rect(200 ,550, 150,20);
+        fill(0,0,0);
+        text("Earth", 200+55, 550+15);
+
+        fill(255, 0,0);
+        rect(200 ,580, 150,20);
+        fill(0,0,0);
+        text("Kronos", 200+55, 580+15);
+
+        fill(255, 0,0);
+        rect(200 ,610, 150,20);
+        fill(0,0,0);
+        text("Vulcan", 200+55, 610+15);
+
+
+
 
 
     }
@@ -175,7 +192,6 @@ public class UI extends PApplet {
             player6.pause();
             player5.pause();
             player3.play();
-            
         }
         if(vulcan == 1){
             bg();
