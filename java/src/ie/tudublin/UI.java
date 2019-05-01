@@ -126,7 +126,7 @@ public class UI extends PApplet {
         }
         if (mouseX > 200 && mouseX < 350)
         {
-            if (mouseY < 630 && mouseY > 550)
+            if (mouseY < 640 && mouseY > 550)
             {
                 bg(); 
             }
@@ -169,9 +169,9 @@ public class UI extends PApplet {
         text("Vulcan", 200+55, 610+15);
 
         fill(255, 0,0);
-        rect(200 ,630, 150,20);
+        rect(200 ,640, 150,20);
         fill(0,0,0);
-        text("The Final Frontier", 200+45, 630+15);
+        text("The Final Frontier", 200+45, 640+15);
 
 
 
@@ -186,7 +186,6 @@ public class UI extends PApplet {
 
         bg();
         
-        earth =1;
         player.play();
 
         if(earth == 1){
