@@ -103,32 +103,32 @@ public class UI extends PApplet {
         }
 
 
-        if (mouseX > 20 && mouseX < 170)
+        if (mouseX > 200 && mouseX < 350)
         {
-            if (mouseY < 520 && mouseY > 550)
+            if (mouseY < 550 && mouseY > 570)
             {
-                red = 1; 
+                earth = 1; 
             }
         }
-        if (mouseX > 20 && mouseX < 170)
+        if (mouseX > 200 && mouseX < 350)
         {
-            if (mouseY < 520 && mouseY > 550)
+            if (mouseY < 580 && mouseY > 600)
             {
-                red = 1; 
+                kronos = 1; 
             }
         }
-        if (mouseX > 20 && mouseX < 170)
+        if (mouseX > 200 && mouseX < 350)
         {
-            if (mouseY < 520 && mouseY > 550)
+            if (mouseY < 610 && mouseY > 620)
             {
-                red = 1; 
+                vulcan = 1; 
             }
         }
-        if (mouseX > 20 && mouseX < 170)
+        if (mouseX > 200 && mouseX < 350)
         {
-            if (mouseY < 520 && mouseY > 550)
+            if (mouseY < 630 && mouseY > 550)
             {
-                red = 1; 
+                bg(); 
             }
         }
    
@@ -167,6 +167,11 @@ public class UI extends PApplet {
         rect(200 ,610, 150,20);
         fill(0,0,0);
         text("Vulcan", 200+55, 610+15);
+
+        fill(255, 0,0);
+        rect(200 ,630, 150,20);
+        fill(0,0,0);
+        text("The Final Frontier", 200+45, 630+15);
 
 
 
